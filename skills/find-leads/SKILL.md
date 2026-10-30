@@ -1,6 +1,6 @@
 ---
 name: find-leads
-description: Leads on X: people whose posts show they need what the user sells. Use when the user asks for leads or clients, or for people who need their service right now.
+description: "Leads on X: people whose posts show they need what the user sells. Use when the user asks for leads or clients, or for people who need their service right now."
 ---
 
 # Find leads
