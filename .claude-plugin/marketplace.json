@@ -1,0 +1,8 @@
+{
+  "name": "headstart",
+  "owner": { "name": "Headstart", "url": "https://useheadstart.ai" },
+  "description": "Headstart: find your next clients on X.",
+  "plugins": [
+    { "name": "headstart", "source": "./", "category": "sales", "tags": ["prospecting", "leads", "x"] }
+  ]
+}

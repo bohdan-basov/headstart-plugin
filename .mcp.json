@@ -1,0 +1,5 @@
+{
+  "mcpServers": {
+    "headstart": { "type": "http", "url": "https://mcp.useheadstart.ai" }
+  }
+}

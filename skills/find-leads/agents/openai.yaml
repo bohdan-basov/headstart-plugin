@@ -1,0 +1,9 @@
+interface:
+  display_name: "Find leads"
+  short_description: "People on X whose posts show they need what you sell."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "headstart"
+      transport: "streamable_http"
+      url: "https://mcp.useheadstart.ai"
