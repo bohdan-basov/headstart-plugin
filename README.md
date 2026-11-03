@@ -1,6 +1,6 @@
 # Headstart
 
-Headstart finds a your next clients on X. This plugin gives Claude and ChatGPT one skill, `find-leads`, and the `headstart` connector it uses. Tell your model what you sell and who buys it; it searches X for people whose posts show they need that right now, reads the profile behind every name, and hands you ten people worth a look, ranked, each with the why. You write every message yourself.
+Headstart finds your next clients on X. This plugin gives Claude and ChatGPT one skill, `find-leads`, and the `headstart` connector it uses. Tell your model what you sell and who buys it; it searches X for people whose posts show they need that right now, reads the profile behind every name, and hands you ten people worth a look, ranked, each with the why. You write every message yourself.
 
 ## Install
 
