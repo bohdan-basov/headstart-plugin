@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "headstart",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Finds a founder's next clients on X: brief Headstart on your best clients, it finds the circles they sit in and ranks who is ready to buy.",
   "author": { "name": "Headstart", "email": "hello@useheadstart.ai", "url": "https://useheadstart.ai" },
   "homepage": "https://useheadstart.ai",

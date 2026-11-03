@@ -20,9 +20,10 @@ claude plugin marketplace add bohdan-basov/headstart-plugin
 - It talks to one server, `https://mcp.useheadstart.ai`, over HTTPS.
 - It sends that server the search queries and the X handles the skill asks for, nothing else from your chat.
 - The server fetches public X posts and public X profiles and returns them to your model.
-- The server keeps your sign-in and your credit balance, and writes one log line per tool call: the tool, its arguments (the query or the handle), your customer id, timing and the size of the result. It does not store the posts or profiles it returns, and it never sees your chat.
+- The server keeps your sign-in, and writes one log line per tool call: the tool, its arguments (the query or the handle), your customer id, timing, the size of the result and what the call cost. It does not store the posts or profiles it returns, and it never sees your chat.
+- Your credit balance is held in Autumn (useautumn.com), a billing ledger: it holds your customer id, name, email and balance, and the server passes those to it.
 - Nothing is read from your files, your memory or your other chats.
-- Each tool call costs credits. Credits are bought at [useheadstart.ai](https://useheadstart.ai).
+- Each search or profile read costs one credit; checking the balance is free. Credits are granted by hand for now: message Bohdan on X ([@bohdanbasov](https://x.com/bohdanbasov)).
 
 ## Files
 
