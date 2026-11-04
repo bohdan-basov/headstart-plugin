@@ -1,6 +1,6 @@
 # Headstart
 
-Headstart finds your next clients on X. This plugin gives Claude and ChatGPT one skill, `find-leads`, and the `headstart` connector it uses. Tell your model what you sell and who buys it; it searches X for people whose posts show they need that right now, reads the profile behind every name, and hands you ten people worth a look, ranked, each with the why. You write every message yourself.
+Headstart finds your next clients on X. This plugin gives Claude and ChatGPT one skill, `find-leads`, and the `headstart` connector it uses. Tell your model what you sell and who buys it, once, in a brief; each run it sweeps X for buying signals (a round, live roles, a launch, a founder's own words), works out which company is behind each one, checks the company against your brief, names the person there who buys, and hands you ten leads with why now and the page every fact came from. You write every message yourself.
 
 ## Install
 
@@ -22,12 +22,13 @@ claude plugin marketplace add bohdan-basov/headstart-plugin
 - The server fetches public X posts and public X profiles and returns them to your model.
 - The server keeps your sign-in, and writes one log line per tool call: the tool, its arguments (the query or the handle), your customer id, timing, the size of the result and what the call cost. It does not store the posts or profiles it returns, and it never sees your chat.
 - Your credit balance is held in Autumn (useautumn.com), a billing ledger: it holds your customer id, name, email and balance, and the server passes those to it.
+- The skill asks your model to read public web pages with the model's own web search and fetch: company sites, job boards, LinkedIn guest pages, Product Hunt, press. Those reads go from your model to those sites, never through the server.
 - Nothing is read from your files, your memory or your other chats.
 - Each search or profile read costs one credit; checking the balance is free. Credits are granted by hand for now: message Bohdan on X ([@bohdanbasov](https://x.com/bohdanbasov)).
 
 ## Files
 
-- `skills/find-leads/SKILL.md` and `skills/find-leads/agents/openai.yaml`: the skill, byte for byte the text in the Headstart repo's `docs/skills/find-leads.md`.
+- `skills/find-leads/SKILL.md`, its `references/` (one file per step, the signal catalog, the reads table) and `skills/find-leads/agents/openai.yaml`: the skill, byte for byte the text in the Headstart repo's `docs/skills/find-leads.md`.
 - `plugin.json`, `mcp.json`: the Agent Plugins manifests ChatGPT and Codex read.
 - `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.mcp.json`: what Claude reads.
 

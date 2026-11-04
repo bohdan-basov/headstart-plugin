@@ -1,159 +1,79 @@
 ---
 name: find-leads
-description: "Leads on X: people whose posts show they need what the user sells. Use when the user asks for leads or clients, or for people who need their service right now."
+description: "Leads for what you sell: decision makers at companies that show a buying signal and fit your brief, with why now. Use when the user asks for leads, clients, or who to reach out to."
 ---
 
 # Find leads
 
-Two tools from the `headstart` connector: `search_x_posts` and `read_x_profile`.
+Two tools from the `headstart` connector, `search_x_posts` and `read_x_profile`, plus your own
+web search and fetch. A **lead** is a decision maker at a company that shows a signal and fits
+the brief; the person may never have posted, and the signal may be someone else's post. One
+**run** returns ten leads unless the user names a count. Three to five companies examined per
+lead is normal.
 
-## Steps
+Six steps, in order. Read the step's file before the step; each step ends on a done-when you
+tick in the transcript before the next starts. `references/signals.md` is the catalog of signal
+types and `references/reads.md` the pages that read and the pages that do not: open them when
+Brief, Sweep or Resolve calls for them.
 
-Work in this order. Each step ends on a check you can tick before the next starts.
+## 1. Brief: read `references/brief.md`
 
-### 1. Read the brief
+Receive the brief, or draft it from the user's own site and ask one round for the rest. On
+claude.ai the brief lives in the Project instructions between chats: read it there before asking,
+and end the run by returning it extended for the user to paste back. **Done when** fields 2, 3 and
+4 are answered and the other five are answered or `none`.
 
-Take three things from the user's message: the **service** they sell, the **buyer** who pays
-for it (a role or a kind of business), and the **count** (ten unless they say otherwise). Take
-place, language and budget floor when stated. When the service or the buyer is missing, ask one
-question that covers both and end the turn. Otherwise state your reading in one line and go on.
+## 2. Sweep: read `references/sweep.md`
 
-Done when: service, buyer and count are written down.
+Read field 8 first: a parked company skips to Name. Collect signals of the types field 4 names,
+from the sources the catalog gives each type. **Done when** every signal carries its type, its
+date, its URL and the raw poster.
 
-### 2. Plan the angles
+## 3. Resolve: read `references/resolve.md`
 
-Before the first search, list the angles a buyer of this service posts from:
+Turn each signal into a company keyed by its domain, or drop it with a reason. On a hiring signal
+the agency test runs first. **Done when** no signal lacks a domain or a drop reason.
 
-- asking for it ("looking for a web designer", "need a website for my")
-- asking for a recommendation ("anyone recommend a web designer")
-- hiring for it ("hiring a web developer")
-- complaining about their own ("my website is embarrassing", "still don't have a website")
-- complaining about a provider ("our agency ghosted us", "paid for a site and it's unusable")
-- stalled doing it themselves ("been rebuilding our site for months")
-- sourcing it for a client ("client needs a site, who do you recommend")
+## 4. Fit: read `references/fit.md`
 
-An eighth, pricing ("how much should a website cost"), when the others run thin.
+Give each company a verdict by the six rules with the brief's field 5 values: in when none fires,
+out with the rule named. **Done when** every company carries a verdict, the rule that fired if
+out, and the URLs behind it.
 
-A **trigger** post announces a change (a new role, money arrived, a launch or rebrand, moving
-platforms) without naming the gap: a reason to look, not a need. It goes on a **watch** list in
-step 3.
+**Loop.** When Fit leaves fewer companies in than the run asks for, return to Sweep with new
+angles or another signal type from field 4; companies already resolved stay resolved.
 
-Turn each angle into one query: an OR group of three to six phrases in the buyer's own words. An
-OR group fills a page; a single exact phrase returns one or two posts for the same call. Leave
-`since` and `until` out on the first pass: results come newest first and you cut by date when you
-judge. Search replies too: a need often sits in one.
+## 5. Name: read `references/name.md`
 
-Done when: the queries are written, one per angle.
+Find the person field 2's role rule names, from public pages, and confirm the role and a public
+URL. **Done when** a person with a public URL is named, or the company goes to field 8 as
+`fits, person not found`.
 
-### 3. Search, one call at a time
+## 6. Why: read `references/why.md`
 
-Run one query, read the page, then write the next: each query answers what the last page showed.
-One angle per call.
+Write each lead as the block below. **Done when** every lead is a complete block and every fact
+in it carries a URL or the word `inferred`.
 
-After a thin page (under five on-topic posts), change the shape: widen the OR group, drop a
-filter, switch angle. A page that was full and almost all on topic earns a second page with
-`next_cursor`; otherwise a new angle beats page two. Both count as searches.
+## The lead block
 
-On every page, check each post with what is already there, the text and the author header (bio,
-followers, location, DMs open):
+    1. Name, Role at Company (domain)
+       Person: public URL (X profile, LinkedIn, or the company site).
+       Company: size as read, stage.
+       Signal: type, date, URL.
+       Fit: one line; the six rules checked, none fired.
+       Why now: one or two sentences, from what the job text or the press release says the
+       company is trying to do.
+       Opener context: the fact the customer leads with.
+       Warm path: the shared investor, batch, employer or community, or none.
+       Evidence: a URL per claim above, or `inferred`.
 
-1. The post shows one of the angles' needs, in the poster's own words.
-2. The need is still open.
-3. The post is under a month old.
-4. The header reads as a buyer: a business or a paying role in the bio. A developer, designer
-   or agency asking for the same service is a seller.
+## The report
 
-A post that passes all four goes on the **shortlist** with six fields: handle, the post's words
-and date, the post URL, the reply count, and the header facts.
+Open with one line: how many leads, and the signal types the sweep covered. Then the numbered
+blocks. Then the brief, whole, with every company shown added to field 7 and every
+`fits, person not found` added to field 8. Close with the spend line:
 
-A trigger post, a change announced without the gap named, puts the handle on the **watch**
-list. Need angles run first. When the
-shortlist is short and budget remains, one `from:` search over the watch handles OR-ed together,
-with the service words and no date window, looks for the gap in their other posts. A watch
-handle whose other post names the gap moves to the shortlist with that post as its post (its URL
-in the header) and the change as a reason it is warm; one whose posts stay silent is dropped.
+    Spend: N searches, N profile reads, N web fetches; N companies examined for N leads.
 
-The same `from:` search, over several shortlisted handles, shows what else an ambiguous candidate
-said. It counts as a search.
-
-Done when: the shortlist holds about fifteen and every watch handle has a need post or is
-dropped, or the twelfth search is done. Twelve is the budget. Short of fifteen with searches
-left, run another angle. When the twelfth search is done, go on with what you have.
-
-### 4. Read every shortlisted profile
-
-Request the profile reads for the whole shortlist in one go: at most fifteen, cheap and
-independent of each other. Every name in the answer has a profile read behind it. From each
-profile confirm:
-
-- **A buyer.** Bio, Website line and pinned post show a business or a paying role.
-- **A history.** Post count and join date show an account that has been around. A thin or new
-  handle stays on the list with the catch stated.
-- **Nothing contradicts the need.** The pinned post and bio neither sell the service nor say
-  the job is done.
-
-Drop a candidate that fails buyer or contradiction. Keep one that fails only history, with the
-catch.
-
-Done when: every shortlisted handle has a read and is marked in or out.
-
-### 5. Judge against the bar
-
-Someone is **worth a look** when their post shows one of the angles' needs in their own words;
-the need is still open (no "found someone" from them, no "don't need one yet" in the post); the
-post is under a month old, and for an ask the nearer two weeks the better; and their profile
-shows a business or a role that holds the budget.
-
-A stated low budget, a crowded reply thread, a post near the month line, or a thin handle (default
-avatar, digits for a name, days old) keep a person on the list, lower them, and go in the why as
-the **catch**. A poll, a general question about the topic, a finished job, a negated need, or a
-seller asking for subcontractors shows no need and stays off the list, hedge or no hedge.
-
-Rank those who clear the bar by **warmth**: how plainly the post states the need and whether it
-names a time or a budget, how clearly the profile pays, how recent, how crowded the thread against
-the author's following.
-
-Done when: every candidate is in with its catch or out, and the ins are in warmth order.
-
-### 6. Report
-
-Open with one line: how many, the order, and what holds for all of them so it is said once,
-the window and whether DMs are open. "Ten, warmest first. All posted in the last two weeks,
-all DMs open."
-
-Then one numbered list, warmest first. Each **lead** is this block:
-
-    1. @handle (Oct 27) https://x.com/handle/status/…
-       Who they are, from the profile: the business or role, the place, one count when it
-       says something. What they said, in the post's own words, with the reply count. Why
-       they are worth a look, with the catch.
-
-The header carries the rank, the handle, the post's month and day and the post URL, bare.
-The paragraph is three sentences with those three jobs, in that order. The header's one link
-and the three sentences are the whole block; the position in the list is the warmth. The why ends
-where the
-message begins: an angle fits in a clause ("lead with a portfolio", "pitch as a vendor"), and
-the customer writes the message. DMs closed goes in the catch.
-
-Example:
-
-    5. @_startuphacker (Oct 19) https://x.com/_startuphacker/status/2112227311139356881
-       Founder of Tyce, construction AI, Toronto, 5,400 followers, DMs open. Announced a $2M
-       pre-seed and wrote "We're hiring founding engineers in Toronto (full-stack and AI
-       agents)", asking people to DM or tag someone, 60 replies. A technical founder who
-       already admitted his weak spot is anything that is not building, which is the profile
-       that outsources sourcing; the catch is a $2M round, so fees have to fit a small budget.
-
-When more cleared the bar than the count asked for, the rest go under one line, "Also cleared
-the bar, lower:", header line only, and only people who cleared the bar.
-
-Close with one line about the list: the angles your queries covered, in the buyer's words, and the
-offer
-of a next round that names the angle or the window it would use. When fewer cleared the bar
-than asked: how many did, how many searches it took, which angles were not reached, and the
-same offer. The list holds only people worth a look; the gap is said, never filled.
-
-For a count above ten: one round of ten, report, offer the next round. The budget is per round.
-
-Done when: the opening line, every block with its three sentences, and the closing line are
-written.
+When fewer than the count clear Fit and Name after the loop, say how many did and which signal
+types the sweep did not reach. The list holds leads only; the gap is said, never filled.

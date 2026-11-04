@@ -1,6 +1,6 @@
 interface:
   display_name: "Find leads"
-  short_description: "People on X whose posts show they need what you sell."
+  short_description: "Decision makers at companies that show a buying signal and fit your brief, with why now."
 dependencies:
   tools:
     - type: "mcp"
