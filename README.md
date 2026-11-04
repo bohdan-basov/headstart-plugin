@@ -22,7 +22,7 @@ claude plugin marketplace add bohdan-basov/headstart-plugin
 - The server fetches public X posts and public X profiles and returns them to your model.
 - The server keeps your sign-in, and writes one log line per tool call: the tool, its arguments (the query or the handle), your customer id, timing, the size of the result and what the call cost. It does not store the posts or profiles it returns, and it never sees your chat.
 - Your credit balance is held in Autumn (useautumn.com), a billing ledger: it holds your customer id, name, email and balance, and the server passes those to it.
-- The skill asks your model to read public web pages with the model's own web search and fetch: company sites, job boards, LinkedIn guest pages, Product Hunt, press. Those reads go from your model to those sites, never through the server.
+- The skill asks your model to read public web pages with the model's own web search and fetch: company sites, job boards, directories, Product Hunt, press. Those reads go from your model to those sites, never through the server.
 - Nothing is read from your files, your memory or your other chats.
 - Each search or profile read costs one credit; checking the balance is free. Credits are granted by hand for now: message Bohdan on X ([@bohdanbasov](https://x.com/bohdanbasov)).
 

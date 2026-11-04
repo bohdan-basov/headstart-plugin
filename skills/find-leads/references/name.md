@@ -7,7 +7,6 @@ things about them: the role, and a public URL the customer can reach them at.
 
 - The job post's "reports to" or hiring-team line: it names the leader the role answers to.
 - The company's team or about page.
-- The LinkedIn guest profile, `linkedin.com/in/<slug>`, when a name is in hand.
 - The X profile: `read_x_profile` confirms a role and a public URL when the person is on X;
   one read per named person, after the name is known.
 - Press and podcast pages, which name a CEO or a CTO with the company.

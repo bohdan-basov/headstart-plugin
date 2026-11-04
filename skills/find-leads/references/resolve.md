@@ -5,10 +5,10 @@ key every later read hangs on.
 
 ## From a post to a domain
 
-- The post's `t.co` link: the redirect target (`reads.md`).
+- The link in the post: `search_x_posts` returns it already expanded, usually the company domain.
 - The poster's bio, pinned post or profile website line (`read_x_profile` returns them).
 - A `jobs@` or `careers@` address in the post.
-- The Product Hunt page, the LinkedIn company page, a press article: each names the domain.
+- The Product Hunt page, a press article, a directory entry: each names the domain.
 - Web search on the company name, when the post gives only the name.
 
 A signal whose company none of these keys to a domain is dropped: `no domain`. The other drop

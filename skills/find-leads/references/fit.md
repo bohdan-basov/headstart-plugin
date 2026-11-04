@@ -20,13 +20,14 @@ raising a round is a signal, and for a brief that buys for tiny teams it is out 
 
 ## Reading size and stage
 
-Read size twice: the LinkedIn guest company page's band and member count, and the open-role
-count on the company's ATS board or the team page (`reads.md` has the URL shapes). The band is typed by an admin and can be off
-by two times; the roles and the team page are what the company shows today. Stage comes from the
+Read size twice: a stated headcount (the team page, press, a directory such as TheOrg or Built
+In), and the open-role count on the company's ATS board (`reads.md` has the URL shapes). A directory's band is typed by
+someone once and can be off by two times; the roles and the team page are what the company shows
+today. Stage comes from the
 funding signal itself or the press behind it, with a 30 to 90 day recency.
 
-A company under ten people often has no second read: no team page, no board, an unknown LinkedIn
-slug. Take the one read and mark the size line `inferred`; the company stays in the run.
+A company under ten people often has no second read: no team page, no board, no directory entry.
+Take the one read and mark the size line `inferred`; the company stays in the run.
 
 ## The verdict line
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "headstart",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Finds your next clients on X: brief Headstart on who buys from you, it finds companies showing a buying signal, checks them against your brief and names the person there who buys, with why now.",
   "author": { "name": "Headstart", "email": "hello@useheadstart.ai", "url": "https://useheadstart.ai" },
   "homepage": "https://useheadstart.ai",
