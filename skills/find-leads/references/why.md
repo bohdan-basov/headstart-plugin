@@ -6,11 +6,9 @@ Write each lead as the block in `SKILL.md`. Every line is a fact with its URL, o
 ## Why now
 
 The why-now comes from what the job text or the press release says the company is trying to do.
-Funding and job posts are commodity signals: four identical "saw you're hiring" openers landed in
-one inbox in one week in the evidence behind this skill, and the round itself is what every
-other vendor congratulates. The content of the post is what nobody else leads with: the BDR role
-that moves the company "from inbound to outbound", the round that is "to open a US
-go-to-market", the vault platform the engineers will own.
+The round and the job post themselves are what every other vendor congratulates; their content
+is what nobody else leads with: the BDR role that moves the company "from inbound to outbound",
+the round that is "to open a US go-to-market", the vault platform the engineers will own.
 
 ## Opener context
 

@@ -12,8 +12,5 @@ host can read them today. The brief may add a type by naming its event and its s
 | Stated ask | A founder asks for or complains about the service | 30 days | X |
 | Launch | A product launch | 30 days | Product Hunt, X |
 
-Windows: hiring runs titles plus a 14 to 60 day window plus a count threshold scaled to
-headcount; funding timing moves 2 to 8 weeks past the announcement; about to raise has no
-published play, only proxies. Warm path is the strongest type and the customer's own list, read
-whole at Sweep. Stated ask is the weakest: alone it produced two of ten the customer would
-message.
+Warm path is the strongest type and the customer's own list, read whole at Sweep. Stated ask is
+the weakest: alone it produced two of ten worth a message.

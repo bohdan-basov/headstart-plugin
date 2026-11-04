@@ -3,7 +3,7 @@
 Give each company a verdict against the brief: **in** when none of the six rules fires, **out**
 with the rule named. Fit is judged after the signal and before anyone is named: a large company
 raising a round is a signal, and for a brief that buys for tiny teams it is out at rule 3. Field
-5 holds the customer's values for each rule.
+5 (Exclusions) holds the customer's values for each rule.
 
 ## The six rules
 
@@ -15,14 +15,13 @@ raising a round is a signal, and for a brief that buys for tiny teams it is out 
    ceiling says `none`.
 4. **Wrong vertical, geography or stack.**
 5. **The signal is not growth**: a backfill, a single role, a round outside its window, a funded
-   company outside field 3's shape.
-6. **On the suppression list**, field 7.
+   company outside field 3 (Company shape).
+6. **On the suppression list**, field 7 (Suppression).
 
 ## Reading size and stage
 
-Read size twice: the LinkedIn guest company page's band and member count
-(`linkedin.com/company/<slug>`; the slug is a guess, budget one wasted fetch), and the open-role
-count on the company's ATS board or the team page. The band is typed by an admin and can be off
+Read size twice: the LinkedIn guest company page's band and member count, and the open-role
+count on the company's ATS board or the team page (`reads.md` has the URL shapes). The band is typed by an admin and can be off
 by two times; the roles and the team page are what the company shows today. Stage comes from the
 funding signal itself or the press behind it, with a 30 to 90 day recency.
 

@@ -1,7 +1,7 @@
 # Name
 
-Find the decision maker field 2's role rule names, from public pages, and confirm two things
-about them: the role, and a public URL the customer can reach them at.
+Find the decision maker in the role field 2 (Buys) names, from public pages, and confirm two
+things about them: the role, and a public URL the customer can reach them at.
 
 ## Where the name is
 
@@ -25,6 +25,6 @@ company is doing, in Why, and a buyer's timeline adds nothing to it.
 
 ## Parked
 
-A company that fits with no person named within three reads goes to field 8 as
-`fits, person not found`, with its domain, signal URL and `stopped at Name`. It is kept, retried
-at Name in the next run, and counted in the report's gap line.
+A company that fits with no person named once the pages above are read goes to field 8
+(Parked) as `fits, person not found`, with its domain, signal URL and `stopped at Name`. It is
+kept, retried at Name in the next run, and counted in the report's gap line.

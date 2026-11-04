@@ -6,19 +6,18 @@ is whoever posted it, recorded as is.
 
 ## Parked first
 
-Field 8 before the first search: every parked company goes straight to Name with its stored
-domain and signal URL, and counts toward the run.
+Field 8 (Parked) before the first search: every parked company goes straight to Name with its
+stored domain and signal URL, and counts toward the run.
 
 ## X search is the sweep
 
 X search over founders' and companies' own words finds the hiring, funding and about-to-raise
-signals; one well-shaped query returned every signal that became a lead in the walkthroughs
-behind this skill. Shape a query as an OR group of the phrases a founder or an employee writes
-on the day, with `since:` set to the window's start, `-filter:retweets`, `lang:en`, latest
-first:
+signals; one well-shaped query is usually the whole sweep for a type. Shape it as an OR group
+of the phrases a founder or an employee writes on the day, with `since:` set to the window's
+start, `-filter:retweets`, and `lang:` from field 3 (Company shape)'s geography, latest first:
 
-- funding: `("raised our pre-seed" OR "closed our pre-seed" OR "announcing our seed") since:<date> -filter:retweets lang:en`
-- hiring: `"we're hiring" ("founding engineer" OR "backend engineer" OR engineers) (seed OR "series a") since:<date> -filter:retweets lang:en`
+- funding: `("raised our pre-seed" OR "closed our pre-seed" OR "announcing our seed") since:<date> -filter:retweets`
+- hiring: `"we're hiring" ("founding engineer" OR "backend engineer" OR engineers) (seed OR "series a") since:<date> -filter:retweets`
 - about to raise: `"solo founder" ("pre-seed" OR "seed round") since:<date>`
 - stated ask: the service in the buyer's words, `("looking for a" OR "anyone recommend") <service> since:<date>`
 - launch: `("we just launched" OR "launching today") since:<date>`
@@ -33,7 +32,7 @@ Web search for "funded and hiring this month" returns guides and aggregators; us
 company name is in hand, to confirm a round or find the board. Fetch the sources a type names
 directly: press releases, ATS boards, Product Hunt, batch and accelerator directories, Companies
 House, the YC mirror. Field 6's warm paths are lists to read whole: an investor's portfolio page,
-a batch page, a community's member directory.
+a batch page, a community's member directory. Field 6 (Warm paths) holds them.
 
 ## What each signal carries
 

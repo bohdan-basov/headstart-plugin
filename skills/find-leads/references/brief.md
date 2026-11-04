@@ -4,7 +4,7 @@ The customer's description of who buys from them, in eight fields. A field is an
 `none`. The run starts once fields 2, 3 and 4 are answered.
 
 1. **Sells**: what the customer sells, one line.
-2. **Buys**: the decision maker as roles, never names. A hiring platform: the talent owner or the
+2. **Buys**: the decision maker as roles. A hiring platform: the talent owner or the
    leader the open roles report to. A retainer for senior engineers: the founder or a technical
    co-founder / CTO who still builds.
 3. **Company shape**: size band, stage, vertical, geography, stack.
